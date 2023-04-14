@@ -1,18 +1,20 @@
 import json
+import os
 from datetime import datetime
+import oc
 
 
-def get_json():
+def get_json(name):
     """
     функция загрузки json - файла
     :return: данные в виде json
     """
     try:
-        with open('operations.json', 'r', encoding='utf-8') as file:
+        with open(name, 'r', encoding='utf-8') as file:
             data = json.load(file)
             return data
-    except FileNotFoundError as e:
-        print(e, 'Отсутствует файл')
+    except FileNotFoundError:
+        return "Не удается найти указанный файл"
 
 
 def filter_data(data):

@@ -2,7 +2,7 @@ from utils import get_json, filter_data, sort_data, format_data
 
 
 def main():
-    data = get_json()
+    data = get_json('operations.json')
     #print('Данные из json')
     #print(data)
     data = filter_data(data)
